@@ -15,13 +15,17 @@ import { environment } from './../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './shared/card/card.component';
 import { TextComponent } from './shared/text/text.component';
+import {MatIconModule} from '@angular/material/icon';
+import { SlidePanelComponent } from './shared/card/slide-panel/slide-panel.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    TextComponent
+    TextComponent,
+    SlidePanelComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +34,8 @@ import { TextComponent } from './shared/text/text.component';
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([LoginEffects, ProfileEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [HTTPService],
   bootstrap: [AppComponent]

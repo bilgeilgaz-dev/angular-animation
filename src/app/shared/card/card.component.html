@@ -1,1 +1,71 @@
-<p>card works!</p>
+<div class="container">
+
+
+  <div class="mx-auto w-50 open-close-container" style="width: 50%;">
+
+    <h2>Find your data</h2>
+    <button class="btn btn-purple mb-4" (click)="slide()">
+      Find my data
+    </button>
+
+    
+  </div>
+
+
+
+
+
+  <div class="mx-auto w-50 open-close-container" style="width: 50%;">
+
+    <div class="d-flex flex-row">
+      <!-- chart starts -->
+      <div class="panel" id="panel">
+        <div class="chart__container">
+          <div class="chart" id="chart">
+          </div>
+          <div class="chart__text__container">
+            <div class="chart__number">382</div>
+            <div class="chart__text">CONNECTIONS</div>
+          </div>
+        </div>
+      </div>
+      <!-- chart ends -->
+      <div class="d-inline-flex pt-4 pr-5">
+        <p class="pt-4">You've found 267 companies that have your personal data</p>
+      </div>
+    </div>
+
+    <div [@openClose]="isOpen ? 'open' : 'closed'">
+
+    </div>
+    <button *ngIf="!isOpen" class="btn round-btn round-btn-plus" (click)="toggle()">
+      <img src="../../../assets/svg/add.svg" alt="">
+    </button>
+    <div *ngIf="isOpen">
+      <h3>You can manage the data you're sharing with these companies.</h3>
+      <button class="btn btn-purple mb-4">View Companies </button>
+      <button class="btn round-btn" (click)="toggle()">
+        <img src="../../../assets/svg/remove.svg" alt="">
+      </button>
+    </div>
+
+  </div>
+</div>
+<div class="mx-auto w-50" >
+<div class="slide" *ngIf="isSlide" [@slideInOut] style="z-index: 20;">
+  <div class="card m-3">
+    <div class="d-flex justify-content-between mt-4 mx-3">
+      <h2>Find My Data</h2>
+      <button class="btn btn-close" style="float: right; margin-top: 0px;" (click)="slide()">
+        <i class="material-icons clear-btn-icon">clear</i>
+      </button>
+    </div>
+  
+    <div class="mx-3">
+      <h3>Some text</h3>
+      <button class="btn btn-purple mb-4 "> Scan a different email</button>
+    </div>
+  </div>
+</div>
+</div>
+

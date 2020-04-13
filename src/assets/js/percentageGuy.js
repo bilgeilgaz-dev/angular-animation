@@ -24,7 +24,7 @@ var counter = null;
 }
 
 function clearCounter() {
-    clearInterval(counter);
+    clearInterval(this.counter);
 }
 
 countup()

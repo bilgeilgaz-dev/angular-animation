@@ -17,7 +17,7 @@ import { selectLoginError } from './reducer/login.reducers';
 import { DataRequest } from './store/requests.interface';
 import { selectRequests } from './reducer/requests.reducer';
 
-declare const drawChart: any;
+
 declare const countup: any;
 
 
@@ -61,7 +61,7 @@ export class AppComponent {
 
         );
 
-        drawChart();
+        
         countup();
 
     }
